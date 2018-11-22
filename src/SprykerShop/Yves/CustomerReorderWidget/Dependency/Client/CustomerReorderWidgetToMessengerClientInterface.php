@@ -7,12 +7,19 @@
 
 namespace SprykerShop\Yves\CustomerReorderWidget\Dependency\Client;
 
-interface CustomerReorderWidgetToAvailabilityStorageClientInterface
+interface CustomerReorderWidgetToMessengerClientInterface
 {
     /**
-     * @param int $idProductAbstract
+     * @param string $message
      *
-     * @return \Generated\Shared\Transfer\StorageAvailabilityTransfer|null
+     * @return void
      */
-    public function getProductAvailabilityByIdProductAbstract($idProductAbstract);
+    public function addInfoMessage($message);
+
+    /**
+     * @param string $message
+     *
+     * @return void
+     */
+    public function addErrorMessage($message);
 }
