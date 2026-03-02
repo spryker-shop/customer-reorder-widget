@@ -22,11 +22,6 @@ class CustomerReorderWidgetToProductStorageClientBridge implements CustomerReord
         $this->productStorageClient = $productStorageClient;
     }
 
-    /**
-     * @param int $idProductConcrete
-     *
-     * @return bool
-     */
     public function isProductConcreteRestricted(int $idProductConcrete): bool
     {
         return $this->productStorageClient->isProductConcreteRestricted($idProductConcrete);

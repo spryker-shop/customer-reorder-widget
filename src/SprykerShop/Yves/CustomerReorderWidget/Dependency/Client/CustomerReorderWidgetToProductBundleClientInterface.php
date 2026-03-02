@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface CustomerReorderWidgetToProductBundleClientInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return array
-     */
     public function getItemsWithBundlesItems(QuoteTransfer $quoteTransfer): array;
 }

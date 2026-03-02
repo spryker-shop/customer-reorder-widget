@@ -68,25 +68,16 @@ class CustomerReorderItemsFormWidget extends AbstractWidget
         $this->addShipmentGroupsParameter($shipmentGroups);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'CustomerReorderItemsFormWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@CustomerReorderWidget/views/customer-reorder-items-form/customer-reorder-items-form.twig';
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormView
-     */
     public function createCustomerReorderItemsWidgetFormView(): FormView
     {
         return $this->getFactory()
@@ -95,19 +86,11 @@ class CustomerReorderItemsFormWidget extends AbstractWidget
             ->createView();
     }
 
-    /**
-     * @return void
-     */
     protected function addFormParameter(): void
     {
         $this->addParameter(static::PARAMETER_FORM, $this->getOrCreateCustomerReorderItemsWidgetFormView());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return void
-     */
     protected function addOrderParameter(OrderTransfer $orderTransfer): void
     {
         $this->addParameter(static::PARAMETER_ORDER, $orderTransfer);
@@ -143,9 +126,6 @@ class CustomerReorderItemsFormWidget extends AbstractWidget
         $this->addParameter(static::PARAMETER_SHIPMENT_GROUPS, $shipmentGroups);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormView
-     */
     protected function getOrCreateCustomerReorderItemsWidgetFormView(): FormView
     {
         if (static::$customerReorderItemsWidgetFormView === null) {

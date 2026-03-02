@@ -59,11 +59,6 @@ class CartFiller implements CartFillerInterface
         $this->reorderItemSanitizerPlugins = $reorderItemSanitizerPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return void
-     */
     public function fillFromOrder(OrderTransfer $orderTransfer): void
     {
         $items = $this->itemsFetcher->getAll($orderTransfer);
@@ -139,11 +134,6 @@ class CartFiller implements CartFillerInterface
         return new ArrayObject($this->executeReorderItemSanitizerPlugins($orderItems));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function removeIdSalesShipmentFromItem(ItemTransfer $itemTransfer): ItemTransfer
     {
         if ($itemTransfer->getShipment() === null) {
@@ -155,11 +145,6 @@ class CartFiller implements CartFillerInterface
         return $itemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function removeSalesShipmentUuidFromItem(ItemTransfer $itemTransfer): ItemTransfer
     {
         if ($itemTransfer->getShipment() === null) {
@@ -183,11 +168,6 @@ class CartFiller implements CartFillerInterface
             ->setItems(new ArrayObject($orderItems));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function removeSalesOrderConfiguredBundleItemFromItemTransfer(ItemTransfer $itemTransfer): ItemTransfer
     {
         if (!$itemTransfer->getSalesOrderConfiguredBundleItem()) {
@@ -199,11 +179,6 @@ class CartFiller implements CartFillerInterface
         return $itemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function removeStateFromItem(ItemTransfer $itemTransfer): ItemTransfer
     {
         if (!$itemTransfer->getState()) {
@@ -215,11 +190,6 @@ class CartFiller implements CartFillerInterface
         return $itemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function removeSalesOrderItemConfigurationFromItem(ItemTransfer $itemTransfer): ItemTransfer
     {
         if (!$itemTransfer->getSalesOrderItemConfiguration()) {

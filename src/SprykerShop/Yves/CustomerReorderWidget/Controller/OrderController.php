@@ -39,12 +39,6 @@ class OrderController extends AbstractController
      */
     protected const PARAM_ID_ORDER = 'id';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param int $idSalesOrder
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function reorderAction(Request $request, int $idSalesOrder): RedirectResponse
     {
         $form = $this->getFactory()->createCustomerReorderWidgetFormFactory()
@@ -79,11 +73,6 @@ class OrderController extends AbstractController
         return $this->getSuccessRedirect();
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function reorderItemsAction(Request $request): RedirectResponse
     {
         $form = $this->getFactory()->createCustomerReorderWidgetFormFactory()
@@ -118,27 +107,16 @@ class OrderController extends AbstractController
         return $this->getSuccessRedirect();
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function getSuccessRedirect(): RedirectResponse
     {
         return $this->redirectResponseInternal(static::ROUTE_SUCCESSFUL_REDIRECT);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function getFailureRedirect(): RedirectResponse
     {
         return $this->redirectResponseInternal(static::ROUTE_FAILURE_REDIRECT);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $form
-     *
-     * @return void
-     */
     protected function addErrorMessagesFromForm(FormInterface $form): void
     {
         /** @var \Symfony\Component\Form\FormErrorIterator<\Symfony\Component\Form\FormError> $errors */

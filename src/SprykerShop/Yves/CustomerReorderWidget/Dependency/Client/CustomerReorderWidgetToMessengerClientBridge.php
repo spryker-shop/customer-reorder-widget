@@ -22,21 +22,11 @@ class CustomerReorderWidgetToMessengerClientBridge implements CustomerReorderWid
         $this->messengerClient = $messengerClient;
     }
 
-    /**
-     * @param string $message
-     *
-     * @return void
-     */
     public function addInfoMessage(string $message): void
     {
         $this->messengerClient->addInfoMessage($message);
     }
 
-    /**
-     * @param string $message
-     *
-     * @return void
-     */
     public function addErrorMessage(string $message): void
     {
         $this->messengerClient->addErrorMessage($message);

@@ -11,17 +11,7 @@ use Generated\Shared\Transfer\OrderTransfer;
 
 interface OrderReaderInterface
 {
-    /**
-     * @param int $idSalesOrder
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function getOrderTransfer(int $idSalesOrder): OrderTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return bool
-     */
     public function hasIncompatibleItems(OrderTransfer $orderTransfer): bool;
 }

@@ -9,17 +9,7 @@ namespace SprykerShop\Yves\CustomerReorderWidget\Dependency\Client;
 
 interface CustomerReorderWidgetToMessengerClientInterface
 {
-    /**
-     * @param string $message
-     *
-     * @return void
-     */
     public function addInfoMessage(string $message): void;
 
-    /**
-     * @param string $message
-     *
-     * @return void
-     */
     public function addErrorMessage(string $message): void;
 }

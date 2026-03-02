@@ -23,34 +23,22 @@ class CustomerReorderFormWidget extends AbstractWidget
      */
     protected static $customerReorderWidgetFormView;
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     */
     public function __construct(OrderTransfer $orderTransfer)
     {
         $this->addParameter('order', $orderTransfer);
         $this->addParameter('form', $this->getOrCreateCustomerReorderWidgetFormView());
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'CustomerReorderFormWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@CustomerReorderWidget/views/customer-reorder-form/customer-reorder-form.twig';
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormView
-     */
     public function createCustomerReorderWidgetFormView(): FormView
     {
         return $this->getFactory()
@@ -59,9 +47,6 @@ class CustomerReorderFormWidget extends AbstractWidget
             ->createView();
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormView
-     */
     protected function getOrCreateCustomerReorderWidgetFormView(): FormView
     {
         if (static::$customerReorderWidgetFormView === null) {

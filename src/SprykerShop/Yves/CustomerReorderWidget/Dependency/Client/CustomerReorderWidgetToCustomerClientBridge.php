@@ -24,9 +24,6 @@ class CustomerReorderWidgetToCustomerClientBridge implements CustomerReorderWidg
         $this->customerClient = $customerClient;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function getCustomer(): CustomerTransfer
     {
         return $this->customerClient->getCustomer();

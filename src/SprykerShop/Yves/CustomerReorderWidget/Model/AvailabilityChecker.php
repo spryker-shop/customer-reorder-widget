@@ -17,19 +17,11 @@ class AvailabilityChecker implements AvailabilityCheckerInterface
      */
     protected $availabilityStorageClient;
 
-    /**
-     * @param \SprykerShop\Yves\CustomerReorderWidget\Dependency\Client\CustomerReorderWidgetToAvailabilityStorageClientInterface $availabilityStorageClient
-     */
     public function __construct(CustomerReorderWidgetToAvailabilityStorageClientInterface $availabilityStorageClient)
     {
         $this->availabilityStorageClient = $availabilityStorageClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return bool
-     */
     public function checkBySalesItem(ItemTransfer $itemTransfer): bool
     {
         $itemTransfer

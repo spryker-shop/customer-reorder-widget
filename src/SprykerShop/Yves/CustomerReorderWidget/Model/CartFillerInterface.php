@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\OrderTransfer;
 
 interface CartFillerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return void
-     */
     public function fillFromOrder(OrderTransfer $orderTransfer): void;
 
     /**

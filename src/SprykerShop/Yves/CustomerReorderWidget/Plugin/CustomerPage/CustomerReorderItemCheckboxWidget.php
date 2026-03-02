@@ -17,9 +17,6 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class CustomerReorderItemCheckboxWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer|null $itemTransfer
-     */
     public function __construct(?ItemTransfer $itemTransfer = null)
     {
         $this
@@ -27,27 +24,16 @@ class CustomerReorderItemCheckboxWidget extends AbstractWidget
             ->addParameter('availability', $this->getItemAvailability($itemTransfer));
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'CustomerReorderItemCheckboxWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@CustomerReorderWidget/views/customer-reorder/customer-reorder-item-checkbox.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer|null $itemTransfer
-     *
-     * @return bool
-     */
     protected function getItemAvailability(?ItemTransfer $itemTransfer = null): bool
     {
         if (!$itemTransfer) {

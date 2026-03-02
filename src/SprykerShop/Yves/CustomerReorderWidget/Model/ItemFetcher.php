@@ -214,11 +214,6 @@ class ItemFetcher implements ItemFetcherInterface
         return $cleanItems;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return void
-     */
     protected function addInfoMessage(ItemTransfer $itemTransfer): void
     {
         $translatedMessage = $this->glossaryStorageClient->translate(
@@ -230,11 +225,6 @@ class ItemFetcher implements ItemFetcherInterface
         $this->messengerClient->addInfoMessage($translatedMessage);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function cleanUpProductOptions(ItemTransfer $itemTransfer): ItemTransfer
     {
         foreach ($itemTransfer->getProductOptions() as $productOptionTransfer) {
@@ -258,11 +248,6 @@ class ItemFetcher implements ItemFetcherInterface
         return $filteredItems;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function cleanUpItemShipmentAddress(ItemTransfer $itemTransfer): ItemTransfer
     {
         $shipmentTransfer = $itemTransfer->getShipment();

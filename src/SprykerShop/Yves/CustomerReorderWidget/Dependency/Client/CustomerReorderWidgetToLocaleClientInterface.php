@@ -9,8 +9,5 @@ namespace SprykerShop\Yves\CustomerReorderWidget\Dependency\Client;
 
 interface CustomerReorderWidgetToLocaleClientInterface
 {
-    /**
-     * @return string
-     */
     public function getCurrentLocale(): string;
 }

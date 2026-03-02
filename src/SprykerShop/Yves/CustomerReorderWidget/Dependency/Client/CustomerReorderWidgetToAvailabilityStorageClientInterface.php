@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\StorageAvailabilityTransfer;
 
 interface CustomerReorderWidgetToAvailabilityStorageClientInterface
 {
-    /**
-     * @param int $idProductAbstract
-     *
-     * @return \Generated\Shared\Transfer\StorageAvailabilityTransfer|null
-     */
     public function getProductAvailabilityByIdProductAbstract(int $idProductAbstract): ?StorageAvailabilityTransfer;
 
     /**

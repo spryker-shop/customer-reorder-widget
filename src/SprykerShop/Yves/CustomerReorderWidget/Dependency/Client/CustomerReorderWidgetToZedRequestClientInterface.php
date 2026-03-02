@@ -9,13 +9,7 @@ namespace SprykerShop\Yves\CustomerReorderWidget\Dependency\Client;
 
 interface CustomerReorderWidgetToZedRequestClientInterface
 {
-    /**
-     * @return void
-     */
     public function addFlashMessagesFromLastZedRequest(): void;
 
-    /**
-     * @return void
-     */
     public function addResponseMessagesToMessenger(): void;
 }

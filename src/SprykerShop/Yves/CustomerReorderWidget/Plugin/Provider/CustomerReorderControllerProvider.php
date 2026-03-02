@@ -30,11 +30,6 @@ class CustomerReorderControllerProvider extends AbstractYvesControllerProvider
      */
     protected const PATTERN_ID = '\d+';
 
-    /**
-     * @param \Silex\Application $app
-     *
-     * @return void
-     */
     protected function defineControllers(Application $app): void
     {
         $this->addReorderRoute()

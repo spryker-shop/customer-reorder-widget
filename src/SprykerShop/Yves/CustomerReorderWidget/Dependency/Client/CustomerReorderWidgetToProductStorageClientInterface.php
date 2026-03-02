@@ -9,10 +9,5 @@ namespace SprykerShop\Yves\CustomerReorderWidget\Dependency\Client;
 
 interface CustomerReorderWidgetToProductStorageClientInterface
 {
-    /**
-     * @param int $idProductConcrete
-     *
-     * @return bool
-     */
     public function isProductConcreteRestricted(int $idProductConcrete): bool;
 }

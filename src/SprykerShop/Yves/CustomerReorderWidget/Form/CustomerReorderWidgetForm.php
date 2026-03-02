@@ -17,9 +17,6 @@ class CustomerReorderWidgetForm extends AbstractType
      */
     public const FORM_NAME = 'customerReorderWidgetForm';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return static::FORM_NAME;

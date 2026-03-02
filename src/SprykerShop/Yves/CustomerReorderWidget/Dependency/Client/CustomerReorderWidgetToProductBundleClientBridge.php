@@ -24,11 +24,6 @@ class CustomerReorderWidgetToProductBundleClientBridge implements CustomerReorde
         $this->productBundleClient = $productBundleClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return array
-     */
     public function getItemsWithBundlesItems(QuoteTransfer $quoteTransfer): array
     {
         return $this->productBundleClient->getItemsWithBundlesItems($quoteTransfer);

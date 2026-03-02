@@ -23,10 +23,6 @@ class OrderReader implements OrderReaderInterface
      */
     protected $customerClient;
 
-    /**
-     * @param \SprykerShop\Yves\CustomerReorderWidget\Dependency\Client\CustomerReorderWidgetToSalesClientInterface $salesClient
-     * @param \SprykerShop\Yves\CustomerReorderWidget\Dependency\Client\CustomerReorderWidgetToCustomerClientInterface $customerClient
-     */
     public function __construct(
         CustomerReorderWidgetToSalesClientInterface $salesClient,
         CustomerReorderWidgetToCustomerClientInterface $customerClient
@@ -35,11 +31,6 @@ class OrderReader implements OrderReaderInterface
         $this->customerClient = $customerClient;
     }
 
-    /**
-     * @param int $idSalesOrder
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function getOrderTransfer(int $idSalesOrder): OrderTransfer
     {
         $orderTransfer = $this->prepareOrderTransferForSearch($idSalesOrder);
@@ -50,11 +41,6 @@ class OrderReader implements OrderReaderInterface
         return $orderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return bool
-     */
     public function hasIncompatibleItems(OrderTransfer $orderTransfer): bool
     {
         foreach ($orderTransfer->getItems() as $itemTransfer) {
@@ -66,11 +52,6 @@ class OrderReader implements OrderReaderInterface
         return false;
     }
 
-    /**
-     * @param int $idSalesOrder
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     protected function prepareOrderTransferForSearch(int $idSalesOrder): OrderTransfer
     {
         $customerTransfer = $this->customerClient->getCustomer();
