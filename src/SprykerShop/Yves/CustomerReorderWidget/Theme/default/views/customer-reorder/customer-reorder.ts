@@ -17,7 +17,7 @@ export default class CustomerReorder extends Component {
         this.trigger = <HTMLElement>this.getElementsByClassName(`${this.jsName}__trigger`)[0];
     }
 
-    protected readyCallback(): void {
+    protected init(): void {
         this.mapEvents();
     }
 
