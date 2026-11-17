@@ -242,8 +242,8 @@ class ItemFetcher implements ItemFetcherInterface
      */
     protected function filterById(array $itemTransfers, array $idOrderItems): array
     {
-        $allowed_keys = array_flip($idOrderItems);
-        $filteredItems = array_intersect_key($itemTransfers, $allowed_keys);
+        $allowedKeys = array_flip($idOrderItems);
+        $filteredItems = array_intersect_key($itemTransfers, $allowedKeys);
 
         return $filteredItems;
     }
